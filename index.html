@@ -1,0 +1,687 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Glowlist — The Edit, Not the Inventory</title>
+<meta name="description" content="Glowlist is an independent edit of fashion and beauty picks, curated for the world, sold by no one but the brands themselves.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --aubergine:#2B1320;
+    --aubergine-deep:#1C0D16;
+    --paper:#FBF6F2;
+    --ink:#221A1C;
+    --gold:#C9A24B;
+    --berry:#B23A55;
+    --sage:#8A9A7E;
+    --taupe:#9C8478;
+    --max:1180px;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:'Inter',sans-serif;
+    -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3{
+    font-family:'Fraunces',serif;
+    font-weight:600;
+    margin:0;
+    letter-spacing:-0.01em;
+  }
+  .mono{font-family:'Space Mono',monospace;}
+  a{color:inherit;text-decoration:none;}
+  img{max-width:100%;display:block;}
+  .wrap{max-width:var(--max);margin:0 auto;padding:0 24px;}
+  .eyebrow{
+    font-family:'Space Mono',monospace;
+    font-size:11px;
+    letter-spacing:0.14em;
+    text-transform:uppercase;
+    opacity:0.65;
+  }
+
+  /* ===== NAV ===== */
+  header{
+    position:sticky;top:0;z-index:50;
+    background:rgba(251,246,242,0.92);
+    backdrop-filter:blur(8px);
+    border-bottom:1px solid rgba(34,26,28,0.08);
+  }
+  nav{
+    display:flex;align-items:center;justify-content:space-between;
+    padding:18px 24px;max-width:var(--max);margin:0 auto;
+  }
+  .logo{
+    font-family:'Fraunces',serif;font-size:21px;font-weight:700;letter-spacing:-0.01em;
+  }
+  .logo span{color:var(--berry);}
+  .nav-links{display:flex;gap:28px;align-items:center;}
+  .nav-links a{
+    font-size:14px;font-weight:500;opacity:0.75;transition:opacity .2s;
+  }
+  .nav-links a:hover, .nav-links a.active{opacity:1;}
+  .nav-cta{
+    background:var(--ink);color:var(--paper)!important;
+    padding:9px 18px;border-radius:100px;font-size:13px;font-weight:600;
+  }
+  .nav-toggle{display:none;background:none;border:none;cursor:pointer;padding:4px;}
+  .nav-toggle span{display:block;width:22px;height:2px;background:var(--ink);margin:5px 0;}
+
+  @media (max-width:760px){
+    .nav-links{
+      position:fixed;top:64px;left:0;right:0;bottom:0;
+      background:var(--paper);flex-direction:column;align-items:flex-start;
+      padding:32px 24px;gap:20px;transform:translateX(100%);
+      transition:transform .3s ease;
+    }
+    .nav-links.open{transform:translateX(0);}
+    .nav-toggle{display:block;}
+  }
+
+  /* ===== HERO ===== */
+  .hero{
+    background:radial-gradient(120% 140% at 80% -10%, var(--aubergine) 0%, var(--aubergine-deep) 60%);
+    color:var(--paper);
+    padding:90px 24px 0;
+    overflow:hidden;
+  }
+  .hero-inner{max-width:var(--max);margin:0 auto;}
+  .hero h1{
+    font-size:clamp(40px,7vw,76px);
+    line-height:1.02;
+    max-width:780px;
+  }
+  .hero h1 em{font-style:italic;color:var(--gold);}
+  .hero p{
+    margin-top:22px;
+    font-size:17px;line-height:1.6;
+    max-width:480px;
+    color:rgba(251,246,242,0.78);
+  }
+  .hero-actions{margin-top:34px;display:flex;gap:14px;flex-wrap:wrap;}
+  .btn{
+    display:inline-flex;align-items:center;gap:8px;
+    padding:13px 24px;border-radius:100px;
+    font-size:14px;font-weight:600;cursor:pointer;border:none;
+    transition:transform .15s ease;
+  }
+  .btn:hover{transform:translateY(-1px);}
+  .btn-primary{background:var(--gold);color:var(--aubergine-deep);}
+  .btn-ghost{background:transparent;color:var(--paper);border:1px solid rgba(251,246,242,0.35);}
+
+  /* ===== SHADE STRIP (signature element) ===== */
+  .shade-strip{
+    margin-top:56px;
+    display:flex;
+    border-top:1px solid rgba(251,246,242,0.15);
+  }
+  .shade{
+    flex:1;
+    padding:22px 16px 26px;
+    text-align:left;
+    border-right:1px solid rgba(251,246,242,0.15);
+    cursor:pointer;
+    background:none;
+    color:var(--paper);
+    transition:background .25s ease;
+  }
+  .shade:last-child{border-right:none;}
+  .shade:hover, .shade.active{background:rgba(251,246,242,0.06);}
+  .swatch{
+    width:26px;height:26px;border-radius:50%;
+    margin-bottom:14px;
+    box-shadow:0 0 0 1px rgba(251,246,242,0.25);
+  }
+  .shade .name{font-family:'Fraunces',serif;font-size:16px;font-weight:600;}
+  .shade .count{font-family:'Space Mono',monospace;font-size:11px;opacity:0.55;margin-top:4px;}
+
+  @media (max-width:760px){
+    .shade-strip{flex-wrap:wrap;}
+    .shade{flex:1 1 50%;border-bottom:1px solid rgba(251,246,242,0.15);}
+  }
+
+  /* ===== SECTION HEADERS ===== */
+  section{padding:84px 0;}
+  .section-head{
+    display:flex;justify-content:space-between;align-items:flex-end;
+    margin-bottom:42px;gap:24px;flex-wrap:wrap;
+  }
+  .section-head h2{font-size:clamp(28px,4vw,40px);}
+  .section-head p{max-width:380px;font-size:14.5px;line-height:1.55;opacity:0.7;margin-top:8px;}
+
+  /* ===== FEATURED ===== */
+  .featured-grid{
+    display:grid;grid-template-columns:1.3fr 1fr 1fr;gap:20px;
+  }
+  .feature-card{
+    border-radius:18px;overflow:hidden;background:#fff;
+    border:1px solid rgba(34,26,28,0.08);
+    display:flex;flex-direction:column;
+  }
+  .feature-card.large{grid-row:span 1;}
+  .feature-img{
+    aspect-ratio:4/3;
+    display:flex;align-items:flex-end;padding:18px;
+  }
+  .feature-img .eyebrow{color:rgba(255,255,255,0.85);}
+  .feature-body{padding:20px 22px 24px;}
+  .feature-body h3{font-size:19px;margin-bottom:8px;}
+  .feature-body p{font-size:13.5px;line-height:1.55;opacity:0.7;margin-bottom:16px;}
+  .price-row{display:flex;justify-content:space-between;align-items:center;}
+  .price{font-size:14px;font-weight:700;}
+  .shop-link{
+    font-size:13px;font-weight:600;color:var(--berry);
+    display:inline-flex;align-items:center;gap:5px;
+  }
+  .shop-link:hover{text-decoration:underline;}
+
+  @media (max-width:900px){
+    .featured-grid{grid-template-columns:1fr;}
+  }
+
+  /* ===== PRODUCT GRID (category sections) ===== */
+  .cat-section .section-head{align-items:center;}
+  .cat-tag{
+    display:inline-flex;align-items:center;gap:8px;
+    font-family:'Space Mono',monospace;font-size:11px;letter-spacing:0.1em;text-transform:uppercase;
+    margin-bottom:10px;
+  }
+  .cat-tag .dot{width:9px;height:9px;border-radius:50%;}
+
+  .product-grid{
+    display:grid;grid-template-columns:repeat(4,1fr);gap:18px;
+  }
+  .product-card{
+    background:#fff;border-radius:16px;overflow:hidden;
+    border:1px solid rgba(34,26,28,0.08);
+    transition:box-shadow .2s ease, transform .2s ease;
+  }
+  .product-card:hover{box-shadow:0 14px 30px rgba(34,26,28,0.08);transform:translateY(-2px);}
+  .product-img{
+    aspect-ratio:1;
+  }
+  .product-body{padding:16px 16px 18px;}
+  .product-body h4{font-family:'Fraunces',serif;font-size:15.5px;font-weight:600;margin-bottom:5px;}
+  .product-body .sub{font-size:12.5px;opacity:0.6;margin-bottom:12px;}
+
+  @media (max-width:980px){.product-grid{grid-template-columns:repeat(2,1fr);}}
+  @media (max-width:560px){.product-grid{grid-template-columns:1fr;}}
+
+  /* texture pattern for placeholder images */
+  .tex{
+    background-image:
+      radial-gradient(circle at 30% 30%, rgba(255,255,255,0.25), transparent 60%),
+      linear-gradient(135deg, var(--c1), var(--c2));
+  }
+
+  /* ===== TRUST BAND ===== */
+  .trust{
+    background:var(--ink);color:var(--paper);
+  }
+  .trust .wrap{
+    display:grid;grid-template-columns:repeat(3,1fr);gap:36px;
+  }
+  .trust h3{font-size:18px;margin-bottom:10px;color:var(--gold);}
+  .trust p{font-size:13.5px;line-height:1.6;opacity:0.75;}
+  @media (max-width:760px){.trust .wrap{grid-template-columns:1fr;}}
+
+  /* ===== NEWSLETTER ===== */
+  .newsletter{background:var(--paper);}
+  .news-card{
+    background:#fff;border:1px solid rgba(34,26,28,0.08);
+    border-radius:24px;padding:54px 40px;text-align:center;
+  }
+  .news-card h2{font-size:clamp(24px,3.6vw,34px);max-width:520px;margin:0 auto 14px;}
+  .news-card p{font-size:14.5px;opacity:0.7;max-width:440px;margin:0 auto 28px;}
+  .news-form{display:flex;gap:10px;max-width:420px;margin:0 auto;flex-wrap:wrap;justify-content:center;}
+  .news-form input{
+    flex:1;min-width:200px;padding:13px 18px;border-radius:100px;
+    border:1px solid rgba(34,26,28,0.18);font-family:'Inter',sans-serif;font-size:14px;
+  }
+  .news-form .btn-primary{background:var(--berry);color:#fff;}
+  .news-msg{margin-top:14px;font-size:13px;color:var(--sage);font-weight:600;display:none;}
+
+  /* ===== FOOTER ===== */
+  footer{background:var(--aubergine-deep);color:rgba(251,246,242,0.7);padding:50px 0 30px;}
+  .foot-top{
+    display:flex;justify-content:space-between;flex-wrap:wrap;gap:30px;
+    padding-bottom:30px;border-bottom:1px solid rgba(251,246,242,0.12);
+    margin-bottom:24px;
+  }
+  .foot-cols{display:flex;gap:48px;flex-wrap:wrap;}
+  .foot-cols h5{font-size:12px;letter-spacing:0.08em;text-transform:uppercase;color:rgba(251,246,242,0.5);margin-bottom:12px;font-family:'Space Mono',monospace;font-weight:400;}
+  .foot-cols a{display:block;font-size:13.5px;margin-bottom:9px;opacity:0.85;}
+  .disclosure{font-size:12px;line-height:1.7;opacity:0.55;max-width:760px;}
+  .copyright{font-size:12px;opacity:0.45;margin-top:18px;}
+
+  .reveal{opacity:0;transform:translateY(16px);transition:opacity .6s ease, transform .6s ease;}
+  .reveal.in{opacity:1;transform:translateY(0);}
+  @media (prefers-reduced-motion: reduce){
+    .reveal{opacity:1;transform:none;transition:none;}
+    html{scroll-behavior:auto;}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <nav>
+    <div class="logo">GLOW<span>·</span>LIST</div>
+    <div class="nav-links" id="navLinks">
+      <a href="#makeup">Makeup</a>
+      <a href="#skincare">Skincare</a>
+      <a href="#fragrance">Fragrance</a>
+      <a href="#style">Style</a>
+      <a href="#join" class="nav-cta">Join the edit</a>
+    </div>
+    <button class="nav-toggle" id="navToggle" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+</header>
+
+<section class="hero">
+  <div class="hero-inner">
+    <p class="eyebrow" style="color:var(--gold);margin-bottom:18px;">An independent edit, est. 2026</p>
+    <h1>We don't sell anything.<br>We just know <em>what's worth buying.</em></h1>
+    <p>Glowlist is a curated guide to fashion and beauty, picked by hand, sold by the brands themselves. Every link takes you straight to the retailer — we just earn a small commission for the introduction.</p>
+    <div class="hero-actions">
+      <a href="#makeup" class="btn btn-primary">Browse the edit ↓</a>
+      <a href="#join" class="btn btn-ghost">Get it weekly</a>
+    </div>
+
+    <div class="shade-strip">
+      <button class="shade active" data-target="#makeup">
+        <span class="swatch" style="background:var(--berry);"></span>
+        <div class="name">Makeup</div>
+        <div class="count">12 picks</div>
+      </button>
+      <button class="shade" data-target="#skincare">
+        <span class="swatch" style="background:var(--sage);"></span>
+        <div class="name">Skincare</div>
+        <div class="count">10 picks</div>
+      </button>
+      <button class="shade" data-target="#fragrance">
+        <span class="swatch" style="background:var(--gold);"></span>
+        <div class="name">Fragrance</div>
+        <div class="count">8 picks</div>
+      </button>
+      <button class="shade" data-target="#style">
+        <span class="swatch" style="background:var(--taupe);"></span>
+        <div class="name">Style</div>
+        <div class="count">14 picks</div>
+      </button>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FEATURED ============ -->
+<section id="featured">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div>
+        <p class="eyebrow">This week's edit</p>
+        <h2>Three things worth your cart</h2>
+      </div>
+      <p>Hand-picked, not algorithm-picked. Swap these for your own affiliate links once you've joined a program — see the comment in the page source for exactly where.</p>
+    </div>
+
+    <div class="featured-grid reveal">
+      <div class="feature-card large">
+        <div class="feature-img tex" style="--c1:var(--berry);--c2:#7a2238;">
+          <span class="eyebrow">Makeup</span>
+        </div>
+        <div class="feature-body">
+          <h3>Velvet Matte Lipstick — Sundown</h3>
+          <p>A blurred-matte finish that doesn't crack by lunch. Buildable from sheer to full.</p>
+          <div class="price-row">
+            <span class="price mono">$24</span>
+            <!-- Replace # with your affiliate link, e.g. Amazon Associates / Awin / ShareASale -->
+            <a href="#" class="shop-link">Shop at Sephora →</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="feature-card">
+        <div class="feature-img tex" style="--c1:var(--sage);--c2:#5c6b53;">
+          <span class="eyebrow">Skincare</span>
+        </div>
+        <div class="feature-body">
+          <h3>Hydra Glow Serum</h3>
+          <p>Lightweight, layers under makeup, no white cast.</p>
+          <div class="price-row">
+            <span class="price mono">$32</span>
+            <a href="#" class="shop-link">Shop at Ulta →</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="feature-card">
+        <div class="feature-img tex" style="--c1:var(--gold);--c2:#9b7a30;">
+          <span class="eyebrow">Fragrance</span>
+        </div>
+        <div class="feature-body">
+          <h3>Amber Musk Eau de Parfum</h3>
+          <p>Warm, low-key, the kind people ask you about.</p>
+          <div class="price-row">
+            <span class="price mono">$58</span>
+            <a href="#" class="shop-link">Shop at Nordstrom →</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ MAKEUP ============ -->
+<section id="makeup" class="cat-section">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div>
+        <div class="cat-tag"><span class="dot" style="background:var(--berry);"></span>Makeup</div>
+        <h2>Face, lips, and the rest</h2>
+      </div>
+      <p>Duplicate any card below to add a new product — each one is a self-contained block in the HTML.</p>
+    </div>
+    <div class="product-grid reveal">
+
+      <div class="product-card">
+        <div class="product-img tex" style="--c1:var(--berry);--c2:#7a2238;"></div>
+        <div class="product-body">
+          <h4>Featherweight Foundation</h4>
+          <p class="sub">Buildable, 24 shades</p>
+          <div class="price-row"><span class="price mono">$36</span><a href="#" class="shop-link">Shop →</a></div>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <div class="product-img tex" style="--c1:#8a3a4a;--c2:#3a1420;"></div>
+        <div class="product-body">
+          <h4>Cream Blush Stick</h4>
+          <p class="sub">Cheeks + lips, one swipe</p>
+          <div class="price-row"><span class="price mono">$19</span><a href="#" class="shop-link">Shop →</a></div>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <div class="product-img tex" style="--c1:#5a2a35;--c2:#221015;"></div>
+        <div class="product-body">
+          <h4>Volumizing Mascara</h4>
+          <p class="sub">No clumps, no flaking</p>
+          <div class="price-row"><span class="price mono">$22</span><a href="#" class="shop-link">Shop →</a></div>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <div class="product-img tex" style="--c1:#b25a6e;--c2:#5a2230;"></div>
+        <div class="product-body">
+          <h4>Soft Focus Setting Powder</h4>
+          <p class="sub">Blurs pores, doesn't cake</p>
+          <div class="price-row"><span class="price mono">$28</span><a href="#" class="shop-link">Shop →</a></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============ SKINCARE ============ -->
+<section id="skincare" class="cat-section">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div>
+        <div class="cat-tag"><span class="dot" style="background:var(--sage);"></span>Skincare</div>
+        <h2>The routine, simplified</h2>
+      </div>
+      <p>Group by skin concern, not just product type, if you want to make browsing easier.</p>
+    </div>
+    <div class="product-grid reveal">
+
+      <div class="product-card">
+        <div class="product-img tex" style="--c1:var(--sage);--c2:#5c6b53;"></div>
+        <div class="product-body">
+          <h4>Gentle Cream Cleanser</h4>
+          <p class="sub">For sensitive, dry skin</p>
+          <div class="price-row"><span class="price mono">$21</span><a href="#" class="shop-link">Shop →</a></div>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <div class="product-img tex" style="--c1:#7a8a6e;--c2:#3a4434;"></div>
+        <div class="product-body">
+          <h4>Vitamin C Brightening Drops</h4>
+          <p class="sub">Morning step, 10% concentration</p>
+          <div class="price-row"><span class="price mono">$34</span><a href="#" class="shop-link">Shop →</a></div>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <div class="product-img tex" style="--c1:#6b7a60;--c2:#2c3526;"></div>
+        <div class="product-body">
+          <h4>Overnight Repair Cream</h4>
+          <p class="sub">Wake up to less redness</p>
+          <div class="price-row"><span class="price mono">$42</span><a href="#" class="shop-link">Shop →</a></div>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <div class="product-img tex" style="--c1:#9aab8e;--c2:#46523c;"></div>
+        <div class="product-body">
+          <h4>Mineral SPF 50</h4>
+          <p class="sub">No white cast, reef-safe</p>
+          <div class="price-row"><span class="price mono">$26</span><a href="#" class="shop-link">Shop →</a></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============ FRAGRANCE ============ -->
+<section id="fragrance" class="cat-section">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div>
+        <div class="cat-tag"><span class="dot" style="background:var(--gold);"></span>Fragrance</div>
+        <h2>Signature scents</h2>
+      </div>
+      <p>Fragrance affiliate programs convert well — most luxury houses run their own via Awin or CJ.</p>
+    </div>
+    <div class="product-grid reveal">
+
+      <div class="product-card">
+        <div class="product-img tex" style="--c1:var(--gold);--c2:#9b7a30;"></div>
+        <div class="product-body">
+          <h4>Amber Musk EDP</h4>
+          <p class="sub">Warm, low-key, 50ml</p>
+          <div class="price-row"><span class="price mono">$58</span><a href="#" class="shop-link">Shop →</a></div>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <div class="product-img tex" style="--c1:#c9b070;--c2:#856a2a;"></div>
+        <div class="product-body">
+          <h4>White Tea & Fig Mist</h4>
+          <p class="sub">Light, daytime, layerable</p>
+          <div class="price-row"><span class="price mono">$38</span><a href="#" class="shop-link">Shop →</a></div>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <div class="product-img tex" style="--c1:#b89450;--c2:#6e561f;"></div>
+        <div class="product-body">
+          <h4>Velvet Oud EDP</h4>
+          <p class="sub">Evening, long-lasting</p>
+          <div class="price-row"><span class="price mono">$74</span><a href="#" class="shop-link">Shop →</a></div>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <div class="product-img tex" style="--c1:#d4bc7a;--c2:#9b7a30;"></div>
+        <div class="product-body">
+          <h4>Rose & Sandalwood Rollerball</h4>
+          <p class="sub">Travel size, purse-friendly</p>
+          <div class="price-row"><span class="price mono">$18</span><a href="#" class="shop-link">Shop →</a></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============ STYLE ============ -->
+<section id="style" class="cat-section">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div>
+        <div class="cat-tag"><span class="dot" style="background:var(--taupe);"></span>Style</div>
+        <h2>Wardrobe staples</h2>
+      </div>
+      <p>Apparel affiliate commissions are usually lower (5–15%) but order values are higher.</p>
+    </div>
+    <div class="product-grid reveal">
+
+      <div class="product-card">
+        <div class="product-img tex" style="--c1:var(--taupe);--c2:#5e4c43;"></div>
+        <div class="product-body">
+          <h4>Tailored Wrap Trench</h4>
+          <p class="sub">Belted, true to size</p>
+          <div class="price-row"><span class="price mono">$148</span><a href="#" class="shop-link">Shop →</a></div>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <div class="product-img tex" style="--c1:#b09a8e;--c2:#5e4c43;"></div>
+        <div class="product-body">
+          <h4>Wide-Leg Tailored Trouser</h4>
+          <p class="sub">High rise, four colors</p>
+          <div class="price-row"><span class="price mono">$84</span><a href="#" class="shop-link">Shop →</a></div>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <div class="product-img tex" style="--c1:#8c7468;--c2:#3e2f28;"></div>
+        <div class="product-body">
+          <h4>Structured Crossbody Bag</h4>
+          <p class="sub">Vegan leather, gold hardware</p>
+          <div class="price-row"><span class="price mono">$96</span><a href="#" class="shop-link">Shop →</a></div>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <div class="product-img tex" style="--c1:#a08e80;--c2:#4a3c34;"></div>
+        <div class="product-body">
+          <h4>Pointed-Toe Leather Flat</h4>
+          <p class="sub">All-day comfort sole</p>
+          <div class="price-row"><span class="price mono">$72</span><a href="#" class="shop-link">Shop →</a></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============ TRUST ============ -->
+<section class="trust">
+  <div class="wrap reveal">
+    <div>
+      <h3>Independently picked</h3>
+      <p>No brand pays to be featured here. We choose what we'd actually tell a friend to buy.</p>
+    </div>
+    <div>
+      <h3>We earn a small commission</h3>
+      <p>When you buy through a link, the retailer pays us a few percent — your price doesn't change.</p>
+    </div>
+    <div>
+      <h3>Always free to browse</h3>
+      <p>No subscription, no paywall. The edit is free; we just don't sell anything ourselves.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ NEWSLETTER ============ -->
+<section class="newsletter" id="join">
+  <div class="wrap reveal">
+    <div class="news-card">
+      <h2>One email, every Friday. The edit, in your inbox.</h2>
+      <p>No spam, no daily noise — just the picks worth knowing about.</p>
+      <form class="news-form" id="newsForm">
+        <input type="email" placeholder="you@email.com" required>
+        <button type="submit" class="btn btn-primary">Join the edit</button>
+      </form>
+      <p class="news-msg" id="newsMsg">You're on the list — watch your inbox on Friday.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer>
+  <div class="wrap">
+    <div class="foot-top">
+      <div>
+        <div class="logo" style="color:var(--paper);font-size:19px;">GLOW<span>·</span>LIST</div>
+      </div>
+      <div class="foot-cols">
+        <div>
+          <h5>Shop the edit</h5>
+          <a href="#makeup">Makeup</a>
+          <a href="#skincare">Skincare</a>
+          <a href="#fragrance">Fragrance</a>
+          <a href="#style">Style</a>
+        </div>
+        <div>
+          <h5>About</h5>
+          <a href="#">Our picks process</a>
+          <a href="#">Contact</a>
+          <a href="#join">Newsletter</a>
+        </div>
+      </div>
+    </div>
+    <p class="disclosure">Affiliate disclosure: Glowlist participates in affiliate marketing programs, which means we may earn a commission on qualifying purchases made through links on this site, at no additional cost to you. We only recommend products we'd genuinely suggest to a friend.</p>
+    <p class="copyright">© 2026 Glowlist. All rights reserved.</p>
+  </div>
+</footer>
+
+<script>
+  // Mobile nav toggle
+  const navToggle = document.getElementById('navToggle');
+  const navLinks = document.getElementById('navLinks');
+  navToggle.addEventListener('click', () => navLinks.classList.toggle('open'));
+  navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => navLinks.classList.remove('open')));
+
+  // Shade strip active state + scroll
+  const shades = document.querySelectorAll('.shade');
+  shades.forEach(shade => {
+    shade.addEventListener('click', () => {
+      shades.forEach(s => s.classList.remove('active'));
+      shade.classList.add('active');
+      document.querySelector(shade.dataset.target)?.scrollIntoView({behavior:'smooth'});
+    });
+  });
+
+  // Reveal on scroll
+  const revealEls = document.querySelectorAll('.reveal');
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if(e.isIntersecting) e.target.classList.add('in'); });
+  }, {threshold:0.12});
+  revealEls.forEach(el => io.observe(el));
+
+  // Newsletter form (cosmetic confirmation — wire this to a real provider,
+  // e.g. Mailchimp, Brevo, or a free Google Form, by replacing this handler
+  // with that provider's form action)
+  document.getElementById('newsForm').addEventListener('submit', function(e){
+    e.preventDefault();
+    document.getElementById('newsMsg').style.display = 'block';
+    this.reset();
+  });
+</script>
+
+</body>
+</html>
