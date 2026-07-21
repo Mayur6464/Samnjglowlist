@@ -89,13 +89,6 @@
             max-width: 1200px;
             margin: 0 auto;
             padding: 3rem 1.5rem;
-            min-height: 2400px;
-        }
-
-        @media (max-width: 600px) {
-            .container {
-                min-height: 3200px;
-            }
         }
 
         /* Intro Section */
@@ -761,11 +754,13 @@
     </footer>
 
     <script>
-        (function(w,d,e,u,f,l,n){w[f]=w[f]||function(){(w[f].q=w[f].q||[])
-        .push(arguments);},l=d.createElement(e),l.async=1,l.src=u,
-        n=d.getElementsByTagName(e)[0],n.parentNode.insertBefore(l,n);})
-        (window,document,'script','https://assets.mailerlite.com/js/universal.js','ml');
-        ml('account', '2507006');
+        window.addEventListener('load', function() {
+            (function(w,d,e,u,f,l,n){w[f]=w[f]||function(){(w[f].q=w[f].q||[])
+            .push(arguments);},l=d.createElement(e),l.async=1,l.src=u,
+            n=d.getElementsByTagName(e)[0],n.parentNode.insertBefore(l,n);})
+            (window,document,'script','https://assets.mailerlite.com/js/universal.js','ml');
+            ml('account', '2507006');
+        });
     </script>
 
     <script>
