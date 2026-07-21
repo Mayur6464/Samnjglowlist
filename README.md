@@ -1,11 +1,16 @@
-# SAMNJ NEWBRAND 
-SAMNJ NEWBRAND — A curated fashion and beauty affiliate website recommending top products worldwide for women.
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-23WN2EWETH"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+# SAMNJ NEWBRAND
 
-  gtag('config', 'G-23WN2EWETH');
-</script>
+SAMNJ NEWBRAND — A curated women's health, wellness, and lifestyle affiliate website, recommending trusted products and expert-recommended books.
+
+**Topics covered:**
+- Period pain relief
+- Menopause relief
+- Fertility & pregnancy wellness
+- General women's wellness
+- Fashion (elegant wrap midi dresses)
+
+**Live site:** https://mayur6464.github.io/Samnjglowlist/
+
+---
+
+*Affiliate disclosure: We earn a small commission from Amazon when you purchase products through our links, at no extra cost to you.*
