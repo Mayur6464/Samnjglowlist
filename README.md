@@ -1,5 +1,5 @@
-# Samnjglowlist
-SamnjGlowlist — A curated fashion and beauty affiliate website recommending top products worldwide for women.
+# SAMNJ NEWBRAND 
+SAMNJ NEWBRAND — A curated fashion and beauty affiliate website recommending top products worldwide for women.
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-23WN2EWETH"></script>
 <script>
