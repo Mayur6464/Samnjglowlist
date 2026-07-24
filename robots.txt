@@ -1,4 +1,12 @@
 User-agent: *
 Allow: /
+Disallow: /downloads/
+
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
 
 Sitemap: https://mayur6464.github.io/Samnjglowlist/sitemap.xml
+Sitemap: https://glowlist-women-s-luxury-boutique.ai.studio/sitemap.xml
