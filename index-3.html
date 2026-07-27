@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SAMNJ — Real Relief for Period Pain &amp; Menopause</title>
+<meta name="description" content="SAMNJ covers honest, well-researched relief for period pain and menopause — with straightforward product picks, not hype.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,900&family=Work+Sans:wght@400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#F7F1EA;
+    --paper-deep:#EFE1D3;
+    --ink:#2B2130;
+    --ink-soft:#5E4F61;
+    --plum:#5C2A4E;
+    --plum-deep:#3D1B34;
+    --sage:#7C8F5D;
+    --sage-deep:#4D5C38;
+    --honey:#CB8A2E;
+    --honey-text:#845A1E;
+    --blush:#C77E6A;
+    --blush-text:#815245;
+    --line: rgba(43,33,48,0.14);
+    --radius: 18px;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  @media (prefers-reduced-motion: reduce){
+    html{scroll-behavior:auto;}
+    *{animation:none !important; transition:none !important;}
+  }
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:'Work Sans', sans-serif;
+    line-height:1.6;
+  }
+  h1,h2,h3{
+    font-family:'Fraunces', serif;
+    font-weight:600;
+    margin:0 0 0.4em 0;
+    letter-spacing:-0.01em;
+    color:var(--plum-deep);
+  }
+  a{color:inherit;}
+  .eyebrow{
+    font-family:'Space Mono', monospace;
+    font-size:0.72rem;
+    letter-spacing:0.14em;
+    text-transform:uppercase;
+    color:var(--sage-deep);
+  }
+  .wrap{max-width:1120px; margin:0 auto; padding:0 24px;}
+
+  /* HEADER */
+  header{
+    position:sticky; top:0; z-index:50;
+    background:rgba(247,241,234,0.92);
+    backdrop-filter:blur(6px);
+    border-bottom:1px solid var(--line);
+  }
+  .nav{
+    display:flex; align-items:center; justify-content:space-between;
+    padding:16px 24px;
+  }
+  .logo{
+    font-family:'Fraunces', serif; font-weight:900; font-size:1.4rem;
+    color:var(--plum-deep); text-decoration:none; letter-spacing:-0.02em;
+  }
+  .logo span{color:var(--sage-deep);}
+  .navlinks{display:flex; gap:28px; list-style:none; margin:0; padding:0;}
+  .navlinks a{
+    text-decoration:none; font-size:0.92rem; font-weight:500; color:var(--ink);
+    border-bottom:2px solid transparent; padding-bottom:2px;
+    transition: border-color 0.2s ease, color 0.2s ease;
+  }
+  .navlinks a:hover, .navlinks a:focus-visible{border-color:var(--honey); color:var(--plum-deep);}
+  .navtoggle{display:none; background:none; border:none; font-size:1.6rem; cursor:pointer; color:var(--plum-deep);}
+  @media (max-width:760px){
+    .navlinks{
+      display:none; position:absolute; top:100%; left:0; right:0;
+      flex-direction:column; background:var(--paper); border-bottom:1px solid var(--line);
+      padding:16px 24px; gap:16px;
+    }
+    .navlinks.open{display:flex;}
+    .navtoggle{display:block;}
+  }
+
+  /* HERO */
+  .hero{padding:72px 0 40px;}
+  .hero-grid{
+    display:grid; grid-template-columns: 1.15fr 0.85fr; gap:56px; align-items:center;
+  }
+  @media (max-width:860px){ .hero-grid{grid-template-columns:1fr;} }
+  .hero h1{font-size:clamp(2.2rem, 4.6vw, 3.4rem); line-height:1.06;}
+  .hero p.lead{
+    font-size:1.12rem; color:var(--ink-soft); max-width:46ch; margin:18px 0 28px;
+  }
+  .cta-row{display:flex; gap:14px; flex-wrap:wrap;}
+  .btn{
+    display:inline-flex; align-items:center; gap:8px;
+    padding:13px 24px; border-radius:999px; text-decoration:none;
+    font-weight:600; font-size:0.95rem; border:1.5px solid transparent;
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+  }
+  .btn:hover{transform:translateY(-1px);}
+  .btn-primary{background:var(--plum); color:#fff;}
+  .btn-primary:hover{box-shadow:0 8px 20px rgba(92,42,78,0.28);}
+  .btn-ghost{border-color:var(--ink); color:var(--ink);}
+
+  /* PHASE WHEEL — signature element */
+  .wheel-wrap{
+    position:relative; width:100%; max-width:340px; margin:0 auto;
+    aspect-ratio:1/1;
+  }
+  .wheel-wrap svg{width:100%; height:100%; overflow:visible;}
+  .wheel-center{
+    position:absolute; top:50%; left:50%; transform:translate(-50%,-50%);
+    text-align:center; width:52%;
+  }
+  .wheel-center .eyebrow{display:block; margin-bottom:2px;}
+  .wheel-center strong{font-family:'Fraunces',serif; font-size:1.05rem; color:var(--plum-deep); line-height:1.2; display:block;}
+  .chip{
+    position:absolute; text-decoration:none; font-size:0.78rem; font-weight:600;
+    background:#fff; border:1.5px solid var(--line); border-radius:999px;
+    padding:6px 12px; white-space:nowrap; color:var(--ink);
+    box-shadow:0 2px 8px rgba(43,33,48,0.06);
+    transition: transform 0.18s ease, border-color 0.18s ease;
+  }
+  .chip:hover, .chip:focus-visible{transform:translateY(-2px); border-color:currentColor;}
+  .chip.n{top:-14px; left:50%; transform:translateX(-50%); color:var(--plum);}
+  .chip.n:hover{transform:translate(-50%,-2px);}
+  .chip.e{top:50%; right:-18px; transform:translateY(-50%); color:var(--sage-deep);}
+  .chip.e:hover{transform:translate(2px,-50%);}
+  .chip.s{bottom:-14px; left:50%; transform:translateX(-50%); color:var(--honey-text);}
+  .chip.s:hover{transform:translate(-50%,2px);}
+  .chip.w{top:50%; left:-18px; transform:translateY(-50%); color:var(--blush-text);}
+  .chip.w:hover{transform:translate(-2px,-50%);}
+  @media (max-width:480px){
+    .chip{font-size:0.68rem; padding:5px 9px;}
+  }
+
+  /* SECTIONS */
+  section{padding:64px 0;}
+  .section-head{max-width:56ch; margin-bottom:36px;}
+  .section-head h2{font-size:clamp(1.6rem,3vw,2.1rem);}
+  .section-head p{color:var(--ink-soft); margin-top:10px;}
+
+  .pillars{display:grid; grid-template-columns:repeat(4,1fr); gap:20px;}
+  @media (max-width:920px){.pillars{grid-template-columns:repeat(2,1fr);}}
+  @media (max-width:520px){.pillars{grid-template-columns:1fr;}}
+  .pillar{
+    background:#fff; border:1px solid var(--line); border-radius:var(--radius);
+    padding:26px 22px; text-decoration:none; color:var(--ink);
+    display:flex; flex-direction:column; gap:10px;
+    transition:transform 0.18s ease, box-shadow 0.18s ease;
+  }
+  .pillar:hover{transform:translateY(-3px); box-shadow:0 12px 28px rgba(43,33,48,0.08);}
+  .pillar .dot{width:34px; height:34px; border-radius:50%;}
+  .pillar h3{font-size:1.08rem; margin:0;}
+  .pillar p{font-size:0.9rem; color:var(--ink-soft); margin:0;}
+
+  .posts{display:grid; grid-template-columns:repeat(3,1fr); gap:24px;}
+  @media (max-width:860px){.posts{grid-template-columns:1fr;}}
+  .post-card{
+    background:var(--paper-deep); border-radius:var(--radius); padding:24px; border:1px solid var(--line);
+  }
+  .post-card .eyebrow{margin-bottom:10px; display:block;}
+  .post-card h3{font-size:1.1rem;}
+  .post-card p{color:var(--ink-soft); font-size:0.92rem; margin:8px 0 14px;}
+  .post-card a{font-weight:600; font-size:0.88rem; text-decoration:none; color:var(--plum);}
+
+  /* NEWSLETTER */
+  .newsletter{
+    background:var(--plum); color:#fff; border-radius:24px;
+    padding:44px 36px; display:grid; grid-template-columns:1.1fr 0.9fr; gap:36px; align-items:center;
+  }
+  @media (max-width:760px){.newsletter{grid-template-columns:1fr;}}
+  .newsletter h2{color:#fff;}
+  .newsletter p{color:rgba(255,255,255,0.82);}
+  .nl-form{display:flex; gap:10px; flex-wrap:wrap;}
+  .nl-form input[type=email]{
+    flex:1; min-width:200px; padding:13px 16px; border-radius:999px; border:none;
+    font-family:'Work Sans',sans-serif; font-size:0.95rem;
+  }
+  .nl-form button{
+    padding:13px 22px; border-radius:999px; border:none; background:var(--honey); color:#2B2130;
+    font-weight:700; cursor:pointer; font-family:'Work Sans',sans-serif; font-size:0.95rem;
+  }
+  .nl-note{font-size:0.78rem; color:rgba(255,255,255,0.6); margin-top:10px;}
+
+  /* DISCLOSURE */
+  .disclosure{
+    background:#fff; border:1.5px solid var(--honey); border-radius:var(--radius);
+    padding:28px 26px;
+  }
+  .disclosure h2{font-size:1.3rem; display:flex; align-items:center; gap:10px;}
+  .disclosure p{font-size:0.94rem; color:var(--ink-soft); margin:10px 0;}
+
+  footer{
+    border-top:1px solid var(--line); margin-top:40px; padding:40px 0 60px;
+  }
+  .footer-grid{display:flex; flex-wrap:wrap; justify-content:space-between; gap:24px;}
+  .footer-links{display:flex; gap:22px; flex-wrap:wrap; list-style:none; padding:0; margin:0;}
+  .footer-links a{text-decoration:none; font-size:0.88rem; color:var(--ink-soft);}
+  .footer-links a:hover{color:var(--plum);}
+  .fine{font-size:0.8rem; color:var(--ink-soft); margin-top:18px; max-width:70ch;}
+</style>
+</head>
+<body>
+
+<header>
+  <nav class="nav">
+    <a class="logo" href="#top">SAMNJ<span>.</span></a>
+    <button class="navtoggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false">&#9776;</button>
+    <ul class="navlinks" id="navLinks">
+      <li><a href="#pillars">What We Cover</a></li>
+      <li><a href="#blog">Latest Reads</a></li>
+      <li><a href="storefront.html">Shop Picks</a></li>
+      <li><a href="#newsletter">Newsletter</a></li>
+      <li><a href="#disclosure">Disclosure</a></li>
+      <li><a href="privacy-policy.html">Privacy Policy</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main id="top">
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <p class="eyebrow">Period pain &amp; menopause, sorted honestly</p>
+        <h1>Relief that's actually researched, not just recommended.</h1>
+        <p class="lead">SAMNJ breaks down what genuinely helps with cramps, hot flashes, and everything in between — plus straightforward picks when a product is worth it.</p>
+        <div class="cta-row">
+          <a class="btn btn-primary" href="#pillars">Start Reading</a>
+          <a class="btn btn-ghost" href="#newsletter">Get the Newsletter</a>
+        </div>
+      </div>
+      <div class="wheel-wrap" aria-label="Content categories">
+        <svg viewBox="0 0 200 200" role="img" aria-hidden="true">
+          <circle cx="100" cy="100" r="90" fill="none" stroke="var(--plum)" stroke-width="14" stroke-linecap="round" stroke-dasharray="127.37 438.12" transform="rotate(-135 100 100)"/>
+          <circle cx="100" cy="100" r="90" fill="none" stroke="var(--sage)" stroke-width="14" stroke-linecap="round" stroke-dasharray="127.37 438.12" transform="rotate(-45 100 100)"/>
+          <circle cx="100" cy="100" r="90" fill="none" stroke="var(--honey)" stroke-width="14" stroke-linecap="round" stroke-dasharray="127.37 438.12" transform="rotate(45 100 100)"/>
+          <circle cx="100" cy="100" r="90" fill="none" stroke="var(--blush)" stroke-width="14" stroke-linecap="round" stroke-dasharray="127.37 438.12" transform="rotate(135 100 100)"/>
+        </svg>
+        <div class="wheel-center">
+          <span class="eyebrow">Explore</span>
+          <strong>4 focus areas</strong>
+        </div>
+        <a class="chip n" href="#pillars">Period Pain Relief</a>
+        <a class="chip e" href="#pillars">Menopause Relief</a>
+        <a class="chip s" href="#blog">Wellness Reads</a>
+        <a class="chip w" href="storefront.html">Product Guides</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="pillars">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>What we cover</h2>
+        <p>Four areas, one goal — helping you find relief without wading through noise.</p>
+      </div>
+      <div class="pillars">
+        <a class="pillar" href="period-pain-relief-guide.html">
+          <span class="dot" style="background:var(--plum);"></span>
+          <h3>Period Pain Relief</h3>
+          <p>Cramps, PMS, and the heating pads, supplements, and habits that actually take the edge off.</p>
+        </a>
+        <a class="pillar" href="night-sweats-relief-guide.html">
+          <span class="dot" style="background:var(--sage);"></span>
+          <h3>Menopause Relief</h3>
+          <p>Hot flashes, night sweats, and sleep — practical support for a stage that deserves better coverage.</p>
+        </a>
+        <a class="pillar" href="menopause-weight-gain-guide.html">
+          <span class="dot" style="background:var(--honey);"></span>
+          <h3>Wellness Reads</h3>
+          <p>Cycle-aware nutrition, movement, and mental health — grounded in evidence, not trends.</p>
+        </a>
+        <a class="pillar" href="storefront.html">
+          <span class="dot" style="background:var(--blush);"></span>
+          <h3>Product Guides</h3>
+          <p>Side-by-side comparisons and honest picks, including items we link to on Amazon.</p>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section id="blog">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>Latest from the blog</h2>
+        <p>Our most recent relief guides.</p>
+      </div>
+      <div class="posts">
+        <article class="post-card">
+          <span class="eyebrow">Period Pain Relief</span>
+          <h3>5 practical ways to help ease period pain</h3>
+          <p>Heat, anti-inflammatories, and natural remedies — plus a complete relief kit that actually helps.</p>
+          <a href="period-pain-relief-guide.html">Read the guide &rarr;</a>
+        </article>
+        <article class="post-card">
+          <span class="eyebrow">Menopause Relief</span>
+          <h3>5 practical ways to stop night sweats</h3>
+          <p>Cooling sheets, breathable bedding, and what actually helps you sleep through a hot flash.</p>
+          <a href="night-sweats-relief-guide.html">Read the guide &rarr;</a>
+        </article>
+        <article class="post-card">
+          <span class="eyebrow">Wellness Reads</span>
+          <h3>5 practical ways to manage menopause weight gain</h3>
+          <p>Why "meno belly" happens, and the protein, movement, and gut-health habits that help.</p>
+          <a href="menopause-weight-gain-guide.html">Read the guide &rarr;</a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="newsletter">
+    <div class="wrap">
+      <div class="newsletter">
+        <div>
+          <h2>One honest email, twice a month.</h2>
+          <p>New relief guides and product picks — no noise, unsubscribe anytime.</p>
+        </div>
+        <div>
+          <div class="ml-embedded" data-form="ArcQTE"></div>
+          <p class="nl-note">We respect your privacy. See our <a href="privacy-policy.html" style="color:#fff; text-decoration:underline;">Privacy Policy</a>.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="disclosure">
+    <div class="wrap">
+      <div class="disclosure">
+        <h2>Affiliate Disclosure (FTC)</h2>
+        <p>SAMNJ is a participant in the Amazon Services LLC Associates Program, an affiliate advertising program designed to provide a means for sites to earn advertising fees by advertising and linking to Amazon.com. <strong>As an Amazon Associate, we earn from qualifying purchases.</strong></p>
+        <p>This means that if you click a product link on this site and make a purchase on Amazon, we may receive a small commission — at no additional cost to you. We only recommend products we've researched and believe may genuinely help with period pain or menopause symptoms; our opinions remain our own.</p>
+        <p>Prices, availability, and product details are accurate as of the date each post was published and are subject to change on Amazon's site.</p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-grid">
+      <a class="logo" href="#top">SAMNJ<span>.</span></a>
+      <ul class="footer-links">
+        <li><a href="privacy-policy.html">Privacy Policy</a></li>
+        <li><a href="#disclosure">Affiliate Disclosure</a></li>
+        <li><a href="mailto:Samnje6464@gmail.com">Contact</a></li>
+      </ul>
+    </div>
+    <p class="fine">&copy; <span id="year"></span> SAMNJ. All content is for informational purposes only and is not a substitute for professional medical advice — always talk to a healthcare provider about persistent or severe symptoms. As an Amazon Associate, SAMNJ earns from qualifying purchases.</p>
+  </div>
+</footer>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+  const toggle = document.getElementById('navToggle');
+  const links = document.getElementById('navLinks');
+  toggle.addEventListener('click', () => {
+    const open = links.classList.toggle('open');
+    toggle.setAttribute('aria-expanded', open);
+  });
+</script>
+
+<script>
+  (function(w,d,e,u,f,l,n){w[f]=w[f]||function(){(w[f].q=w[f].q||[])
+  .push(arguments);},l=d.createElement(e),l.async=1,l.src=u,
+  n=d.getElementsByTagName(e)[0],n.parentNode.insertBefore(l,n);})
+  (window,document,'script','https://assets.mailerlite.com/js/universal.js','ml');
+  ml('account', '2507006');
+</script>
+
+</body>
+</html>
