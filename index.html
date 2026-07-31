@@ -1,329 +1,403 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Women's Wellness Weekly | SAMNJ Newbrand</title>
-    <meta name="description" content="Science-backed women's wellness guides for period pain relief, menopause, fertility, hormonal balance, and general wellness.">
-    <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-            line-height: 1.6;
-            color: #333;
-            background: #f5f1e8;
-        }
-        .container { max-width: 800px; margin: 0 auto; padding: 40px 20px; }
-        header {
-            text-align: center;
-            margin-bottom: 40px;
-            border-bottom: 3px solid #8b6f47;
-            padding-bottom: 30px;
-        }
-        .logo-image {
-            max-width: 200px;
-            margin: 20px auto;
-            display: block;
-        }
-        h1 {
-            color: #4a1f1f;
-            font-size: 2.5em;
-            margin: 20px 0;
-        }
-        h2 {
-            color: #4a1f1f;
-            font-size: 1.8em;
-            margin: 30px 0 15px;
-        }
-        h3 {
-            color: #8b6f47;
-            font-size: 1.2em;
-            font-weight: 400;
-            margin: 10px 0;
-        }
-        h4 {
-            color: #666;
-            font-size: 1em;
-            font-weight: 400;
-        }
-        .intro-text {
-            font-size: 1.1em;
-            line-height: 1.8;
-            margin: 20px 0;
-            color: #333;
-        }
-        .section {
-            margin: 40px 0;
-            padding: 25px;
-            background: white;
-            border-left: 4px solid #8b6f47;
-            border-radius: 4px;
-        }
-        .category-item {
-            margin: 25px 0;
-            padding: 20px;
-            background: #fafaf8;
-            border-radius: 4px;
-            transition: all 0.3s ease;
-        }
-        .category-item:hover {
-            background: white;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-        }
-        .category-icon {
-            font-size: 1.5em;
-            margin-right: 10px;
-        }
-        .category-title {
-            color: #4a1f1f;
-            font-size: 1.2em;
-            font-weight: 600;
-            margin-bottom: 8px;
-        }
-        .category-desc {
-            color: #555;
-            font-size: 0.95em;
-            margin-bottom: 12px;
-        }
-        .sub-links {
-            margin: 8px 0 12px;
-        }
-        .sub-links a {
-            display: inline-block;
-            margin-right: 14px;
-            font-size: 0.9em;
-        }
-        a {
-            color: #8b6f47;
-            text-decoration: none;
-            font-weight: 500;
-            border-bottom: 2px solid transparent;
-            transition: all 0.3s ease;
-        }
-        a:hover {
-            color: #4a1f1f;
-            border-bottom-color: #8b6f47;
-        }
-        .cta-button {
-            display: inline-block;
-            padding: 12px 20px;
-            background: #4a1f1f;
-            color: white;
-            border-radius: 4px;
-            margin-top: 10px;
-            font-weight: 600;
-            transition: all 0.3s ease;
-        }
-        .cta-button:hover {
-            background: #8b6f47;
-            color: white;
-            border-bottom: none;
-        }
-        .quick-start {
-            background: #f0ebe0;
-            border: 2px solid #8b6f47;
-            padding: 30px;
-            border-radius: 4px;
-            margin: 30px 0;
-        }
-        .quick-start h3 {
-            color: #4a1f1f;
-            margin-bottom: 20px;
-            font-size: 1.3em;
-        }
-        .start-link {
-            display: block;
-            padding: 12px 0;
-            color: #4a1f1f;
-            font-weight: 600;
-            border-bottom: 2px solid transparent;
-        }
-        .start-link:hover {
-            border-bottom-color: #8b6f47;
-        }
-        .newsletter-section {
-            background: linear-gradient(135deg, #4a1f1f 0%, #8b6f47 100%);
-            color: white;
-            padding: 40px;
-            border-radius: 4px;
-            margin: 40px 0;
-            text-align: center;
-        }
-        .newsletter-section h3 {
-            color: white;
-            margin-bottom: 15px;
-        }
-        .newsletter-section a {
-            color: #f5f1e8;
-            font-weight: 600;
-        }
-        .faq-item {
-            margin: 20px 0;
-            padding: 15px;
-            background: #fafaf8;
-            border-radius: 4px;
-        }
-        .faq-q {
-            color: #4a1f1f;
-            font-weight: 600;
-            margin-bottom: 8px;
-        }
-        .faq-a {
-            color: #555;
-            font-size: 0.95em;
-        }
-        footer {
-            text-align: center;
-            padding: 30px 0;
-            margin-top: 50px;
-            border-top: 2px solid #8b6f47;
-            color: #666;
-            font-size: 0.9em;
-        }
-        .footer-links a {
-            margin: 0 15px;
-            display: inline-block;
-        }
-        .disclosure {
-            background: #f0ebe0;
-            padding: 15px;
-            border-radius: 4px;
-            margin-top: 20px;
-            font-size: 0.85em;
-            color: #555;
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SAMNJ — Real Relief for Period Pain &amp; Menopause</title>
+<meta name="description" content="SAMNJ covers honest, well-researched relief for period pain and menopause — with straightforward product picks, not hype.">
+<link rel="canonical" href="https://mayur6464.github.io/Samnjglowlist/">
+<link rel="sitemap" type="application/xml" title="Sitemap" href="https://mayur6464.github.io/Samnjglowlist/sitemap.xml">
+<meta property="og:url" content="https://mayur6464.github.io/Samnjglowlist/">
+<meta property="og:title" content="SAMNJ — Real Relief for Period Pain & Menopause">
+<meta property="og:description" content="SAMNJ covers honest, well-researched relief for period pain and menopause — with straightforward product picks, not hype.">
+<meta property="og:type" content="website">
+
+<!-- Google Analytics 4 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-23WN2EWETH"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-23WN2EWETH');
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,900&family=Work+Sans:wght@400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#F7F1EA;
+    --paper-deep:#EFE1D3;
+    --ink:#2B2130;
+    --ink-soft:#5E4F61;
+    --plum:#5C2A4E;
+    --plum-deep:#3D1B34;
+    --sage:#7C8F5D;
+    --sage-deep:#4D5C38;
+    --honey:#CB8A2E;
+    --honey-text:#845A1E;
+    --blush:#C77E6A;
+    --blush-text:#815245;
+    --line: rgba(43,33,48,0.14);
+    --radius: 18px;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  @media (prefers-reduced-motion: reduce){
+    html{scroll-behavior:auto;}
+    *{animation:none !important; transition:none !important;}
+  }
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:'Work Sans', sans-serif;
+    line-height:1.6;
+  }
+  h1,h2,h3{
+    font-family:'Fraunces', serif;
+    font-weight:600;
+    margin:0 0 0.4em 0;
+    letter-spacing:-0.01em;
+    color:var(--plum-deep);
+  }
+  a{color:inherit;}
+  .eyebrow{
+    font-family:'Space Mono', monospace;
+    font-size:0.72rem;
+    letter-spacing:0.14em;
+    text-transform:uppercase;
+    color:var(--sage-deep);
+  }
+  .wrap{max-width:1120px; margin:0 auto; padding:0 24px;}
+
+  /* HEADER */
+  header{
+    position:sticky; top:0; z-index:50;
+    background:rgba(247,241,234,0.92);
+    backdrop-filter:blur(6px);
+    border-bottom:1px solid var(--line);
+  }
+  .nav{
+    display:flex; align-items:center; justify-content:space-between;
+    padding:16px 24px;
+  }
+  .logo{
+    font-family:'Fraunces', serif; font-weight:900; font-size:1.4rem;
+    color:var(--plum-deep); text-decoration:none; letter-spacing:-0.02em;
+  }
+  .logo span{color:var(--sage-deep);}
+  .navlinks{display:flex; gap:28px; list-style:none; margin:0; padding:0;}
+  .navlinks a{
+    text-decoration:none; font-size:0.92rem; font-weight:500; color:var(--ink);
+    border-bottom:2px solid transparent; padding-bottom:2px;
+    transition: border-color 0.2s ease, color 0.2s ease;
+  }
+  .navlinks a:hover, .navlinks a:focus-visible{border-color:var(--honey); color:var(--plum-deep);}
+  .navtoggle{display:none; background:none; border:none; font-size:1.6rem; cursor:pointer; color:var(--plum-deep);}
+  @media (max-width:760px){
+    .navlinks{
+      display:none; position:absolute; top:100%; left:0; right:0;
+      flex-direction:column; background:var(--paper); border-bottom:1px solid var(--line);
+      padding:16px 24px; gap:16px;
+    }
+    .navlinks.open{display:flex;}
+    .navtoggle{display:block;}
+  }
+
+  /* HERO */
+  .hero{padding:72px 0 40px;}
+  .hero-grid{
+    display:grid; grid-template-columns: 1.15fr 0.85fr; gap:56px; align-items:center;
+  }
+  @media (max-width:860px){ .hero-grid{grid-template-columns:1fr;} }
+  .hero h1{font-size:clamp(2.2rem, 4.6vw, 3.4rem); line-height:1.06;}
+  .hero p.lead{
+    font-size:1.12rem; color:var(--ink-soft); max-width:46ch; margin:18px 0 28px;
+  }
+  .cta-row{display:flex; gap:14px; flex-wrap:wrap;}
+  .btn{
+    display:inline-flex; align-items:center; gap:8px;
+    padding:13px 24px; border-radius:999px; text-decoration:none;
+    font-weight:600; font-size:0.95rem; border:1.5px solid transparent;
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+  }
+  .btn:hover{transform:translateY(-1px);}
+  .btn-primary{background:var(--plum); color:#fff;}
+  .btn-primary:hover{box-shadow:0 8px 20px rgba(92,42,78,0.28);}
+  .btn-ghost{border-color:var(--ink); color:var(--ink);}
+
+  /* PHASE WHEEL — signature element */
+  .wheel-wrap{
+    position:relative; width:100%; max-width:340px; margin:0 auto;
+    aspect-ratio:1/1;
+  }
+  .wheel-wrap svg{width:100%; height:100%; overflow:visible;}
+  .wheel-center{
+    position:absolute; top:50%; left:50%; transform:translate(-50%,-50%);
+    text-align:center; width:52%;
+  }
+  .wheel-center .eyebrow{display:block; margin-bottom:2px;}
+  .wheel-center strong{font-family:'Fraunces',serif; font-size:1.05rem; color:var(--plum-deep); line-height:1.2; display:block;}
+  .chip{
+    position:absolute; text-decoration:none; font-size:0.78rem; font-weight:600;
+    background:#fff; border:1.5px solid var(--line); border-radius:999px;
+    padding:6px 12px; white-space:nowrap; color:var(--ink);
+    box-shadow:0 2px 8px rgba(43,33,48,0.06);
+    transition: transform 0.18s ease, border-color 0.18s ease;
+  }
+  .chip:hover, .chip:focus-visible{transform:translateY(-2px); border-color:currentColor;}
+  .chip.n{top:-14px; left:50%; transform:translateX(-50%); color:var(--plum);}
+  .chip.n:hover{transform:translate(-50%,-2px);}
+  .chip.e{top:50%; right:-18px; transform:translateY(-50%); color:var(--sage-deep);}
+  .chip.e:hover{transform:translate(2px,-50%);}
+  .chip.s{bottom:-14px; left:50%; transform:translateX(-50%); color:var(--honey-text);}
+  .chip.s:hover{transform:translate(-50%,2px);}
+  .chip.w{top:50%; left:-18px; transform:translateY(-50%); color:var(--blush-text);}
+  .chip.w:hover{transform:translate(-2px,-50%);}
+  @media (max-width:480px){
+    .chip{font-size:0.68rem; padding:5px 9px;}
+  }
+
+  /* SECTIONS */
+  section{padding:64px 0;}
+  .section-head{max-width:56ch; margin-bottom:36px;}
+  .section-head h2{font-size:clamp(1.6rem,3vw,2.1rem);}
+  .section-head p{color:var(--ink-soft); margin-top:10px;}
+
+  .pillars{display:grid; grid-template-columns:repeat(4,1fr); gap:20px;}
+  @media (max-width:920px){.pillars{grid-template-columns:repeat(2,1fr);}}
+  @media (max-width:520px){.pillars{grid-template-columns:1fr;}}
+  .pillar{
+    background:#fff; border:1px solid var(--line); border-radius:var(--radius);
+    padding:26px 22px; text-decoration:none; color:var(--ink);
+    display:flex; flex-direction:column; gap:10px;
+    transition:transform 0.18s ease, box-shadow 0.18s ease;
+  }
+  .pillar:hover{transform:translateY(-3px); box-shadow:0 12px 28px rgba(43,33,48,0.08);}
+  .pillar .dot{width:34px; height:34px; border-radius:50%;}
+  .pillar h3{font-size:1.08rem; margin:0;}
+  .pillar p{font-size:0.9rem; color:var(--ink-soft); margin:0;}
+
+  .posts{display:grid; grid-template-columns:repeat(auto-fit, minmax(240px, 1fr)); gap:24px;}
+  @media (max-width:860px){.posts{grid-template-columns:1fr;}}
+  .post-card{
+    background:var(--paper-deep); border-radius:var(--radius); padding:24px; border:1px solid var(--line);
+  }
+  .post-card .eyebrow{margin-bottom:10px; display:block;}
+  .post-card h3{font-size:1.1rem;}
+  .post-card p{color:var(--ink-soft); font-size:0.92rem; margin:8px 0 14px;}
+  .post-card a{font-weight:600; font-size:0.88rem; text-decoration:none; color:var(--plum);}
+
+  /* NEWSLETTER */
+  .newsletter{
+    background:var(--plum); color:#fff; border-radius:24px;
+    padding:44px 36px; display:grid; grid-template-columns:1.1fr 0.9fr; gap:36px; align-items:center;
+  }
+  @media (max-width:760px){.newsletter{grid-template-columns:1fr;}}
+  .newsletter h2{color:#fff;}
+  .newsletter p{color:rgba(255,255,255,0.82);}
+  .nl-form{display:flex; gap:10px; flex-wrap:wrap;}
+  .nl-form input[type=email]{
+    flex:1; min-width:200px; padding:13px 16px; border-radius:999px; border:none;
+    font-family:'Work Sans',sans-serif; font-size:0.95rem;
+  }
+  .nl-form button{
+    padding:13px 22px; border-radius:999px; border:none; background:var(--honey); color:#2B2130;
+    font-weight:700; cursor:pointer; font-family:'Work Sans',sans-serif; font-size:0.95rem;
+  }
+  .nl-note{font-size:0.78rem; color:rgba(255,255,255,0.6); margin-top:10px;}
+
+  /* DISCLOSURE */
+  .disclosure{
+    background:#fff; border:1.5px solid var(--honey); border-radius:var(--radius);
+    padding:28px 26px;
+  }
+  .disclosure h2{font-size:1.3rem; display:flex; align-items:center; gap:10px;}
+  .disclosure p{font-size:0.94rem; color:var(--ink-soft); margin:10px 0;}
+
+  footer{
+    border-top:1px solid var(--line); margin-top:40px; padding:40px 0 60px;
+  }
+  .footer-grid{display:flex; flex-wrap:wrap; justify-content:space-between; gap:24px;}
+  .footer-links{display:flex; gap:22px; flex-wrap:wrap; list-style:none; padding:0; margin:0;}
+  .footer-links a{text-decoration:none; font-size:0.88rem; color:var(--ink-soft);}
+  .footer-links a:hover{color:var(--plum);}
+  .fine{font-size:0.8rem; color:var(--ink-soft); margin-top:18px; max-width:70ch;}
+</style>
 </head>
 <body>
-    <div class="container">
-        <header>
-            <h1>Welcome to SAMNJ Newbrand</h1>
-            <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgXudQBrjeFbUmf2CsM0pcNAkzwo5SbDff1iS3p2y4UdKpRJ6in15fi5xW5hSqFqGGc_I8g8Cz3BK6pLeA7L03K2-YhOHuJjinSgGLjL9rc8QsVQbLEEkUPAPoUTELOWemQPoacoBH5GGcfb3Q4Db-rqPyQFodqvp2b1PmdyRmIdzzCNv45qmk6FEmPpYhd/s320/56.png" alt="SAMNJ Newbrand Logo" class="logo-image">
-            <h2>Women's Wellness Weekly</h2>
-            <h3>Published: July 15, Wednesday | By: SAMNJ Newbrand</h3>
-            <h4>Category: Women's Wellness</h4>
-        </header>
 
-        <section class="section">
-            <p class="intro-text"><strong>🌸 Hi! Welcome to Your Wellness Hub</strong></p>
-            <p class="intro-text"><strong>I'm SAMNJ, and I created this space because I was tired of searching everywhere for women's wellness answers.</strong></p>
-            <p class="intro-text"><strong>For years, I'd jump between different websites, different experts, different recommendations—all contradicting each other. Period pain? One site said heat, another said medication, a third said it's "just part of being a woman." Hormonal balance? Fertility planning? Menopause? Every search result was confusing, contradictory, or trying to sell me something overpriced.</strong></p>
-            <p class="intro-text"><strong>That's when I decided to do the research myself.</strong></p>
-            <p class="intro-text"><strong>I spent the last year testing products, reading expert books, and creating complete product combos that actually work—guides designed around real women's bodies and real life stages.</strong></p>
-            <p class="intro-text"><strong>This is Women's Wellness Weekly: a space where every recommendation is tested, every combo is intentional, and every guide gives you science-backed solutions you can actually use.</strong></p>
-        </section>
+<header>
+  <nav class="nav">
+    <a class="logo" href="#top">SAMNJ<span>.</span></a>
+    <button class="navtoggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false">&#9776;</button>
+    <ul class="navlinks" id="navLinks">
+      <li><a href="#pillars">What We Cover</a></li>
+      <li><a href="#blog">Latest Reads</a></li>
+      <li><a href="storefront.html">Shop Picks</a></li>
+      <li><a href="#newsletter">Newsletter</a></li>
+      <li><a href="#disclosure">Disclosure</a></li>
+      <li><a href="privacy-policy.html">Privacy Policy</a></li>
+    </ul>
+  </nav>
+</header>
 
-        <section class="section">
-            <h2>💎 What You'll Find Here</h2>
-            <p style="margin-bottom: 20px;">We cover every stage of women's health with complete product guides and recommendations:</p>
-
-            <div class="category-item">
-                <div class="category-title"><span class="category-icon">🌡️</span> Period Pain Relief</div>
-                <div class="category-desc">Stop suffering through cramps. Our guides include heating solutions, natural pain relief, prevention strategies, and product combos designed specifically for period pain.</div>
-                <a href="https://mayur6464.github.io/Samnjglowlist/period-pain-relief-guide.html" class="cta-button">Browse period pain relief guides</a>
-            </div>
-
-            <div class="category-item">
-                <div class="category-title"><span class="category-icon">🤰</span> Fertility & Pregnancy</div>
-                <div class="category-desc">Whether you're trying to conceive or already pregnant, we break down preconception prep, pregnancy support, and postpartum recovery with exactly what you need—and why.</div>
-                <a href="https://mayur6464.github.io/Samnjglowlist/" class="cta-button">Browse fertility and pregnancy guides</a>
-            </div>
-
-            <div class="category-item">
-                <div class="category-title"><span class="category-icon">💊</span> Hormonal Balance</div>
-                <div class="category-desc">Mood swings, energy crashes, irregular periods, skin issues—often it's hormonal. Our guides show you how to support your cycle with seed cycling, supplements, and tracking tools.</div>
-                <a href="https://mayur6464.github.io/Samnjglowlist/" class="cta-button">Browse hormonal balance guides</a>
-            </div>
-
-            <div class="category-item">
-                <div class="category-title"><span class="category-icon">❄️</span> Menopause Relief</div>
-                <div class="category-desc">Menopause doesn't mean suffering. We cover hot flashes, sleep issues, mood changes, and bone health with products and strategies that actually help you thrive.</div>
-                <div class="sub-links">
-                    <a href="https://mayur6464.github.io/Samnjglowlist/night-sweats-relief-guide.html">Night sweats guide</a>
-                    <a href="https://mayur6464.github.io/Samnjglowlist/menopause-weight-gain-guide.html">Weight gain guide</a>
-                    <a href="https://mayur6464.github.io/Samnjglowlist/menopause-mood-swings-guide.html">Mood swings guide</a>
-                </div>
-                <a href="https://mayur6464.github.io/Samnjglowlist/night-sweats-relief-guide.html" class="cta-button">Browse menopause relief guides</a>
-            </div>
-
-            <div class="category-item">
-                <div class="category-title"><span class="category-icon">✨</span> General Wellness</div>
-                <div class="category-desc">Building overall health, energy, immunity, and vitality. Complete wellness combos for prevention and long-term wellbeing.</div>
-                <a href="https://mayur6464.github.io/Samnjglowlist/storefront.html" class="cta-button">Browse complete wellness guides</a>
-            </div>
-        </section>
-
-        <section class="section">
-            <h2>🎯 How These Guides Work</h2>
-            <p style="margin-bottom: 20px;">Every guide follows the same philosophy:</p>
-            <p style="margin: 15px 0;"><strong>✅ 5 Complete Combos</strong> — Not just individual products, but product combinations designed to work together synergistically. One combo won't do it all; five thoughtfully-chosen combinations let you pick what fits your life.</p>
-            <p style="margin: 15px 0;"><strong>✅ Real Product Links</strong> — All recommendations link to Amazon through our affiliate program. Prices, reviews, and availability update in real-time so you always see current info.</p>
-            <p style="margin: 15px 0;"><strong>✅ Expert Book Recommendations</strong> — Kindle books from actual specialists and researchers who understand women's bodies. Because products work better when you understand the why.</p>
-            <p style="margin: 15px 0;"><strong>✅ Science-Backed Information</strong> — Every recommendation is grounded in research, studies, and expert guidance—not trends or guesses.</p>
-            <p style="margin: 15px 0;"><strong>✅ Honest Affiliate Disclosure</strong> — We earn a small commission when you purchase through our Amazon links at no extra cost to you. Supporting this site helps us keep creating guides.</p>
-        </section>
-
-        <div class="quick-start">
-            <h3>👇 Start Your Wellness Journey</h3>
-            <p style="margin-bottom: 20px; color: #555;">Not sure where to begin? Choose your wellness path:</p>
-            <a href="https://mayur6464.github.io/Samnjglowlist/period-pain-relief-guide.html" class="start-link">Start with period pain relief guide</a>
-            <a href="https://mayur6464.github.io/Samnjglowlist/" class="start-link">Start with fertility and pregnancy guide</a>
-            <a href="https://mayur6464.github.io/Samnjglowlist/" class="start-link">Start with hormonal balance guide</a>
-            <a href="https://mayur6464.github.io/Samnjglowlist/night-sweats-relief-guide.html" class="start-link">Start with menopause relief guide</a>
-            <a href="https://mayur6464.github.io/Samnjglowlist/storefront.html" class="start-link">Start with complete wellness guide</a>
+<main id="top">
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <p class="eyebrow">Period pain &amp; menopause, sorted honestly</p>
+        <h1>Relief that's actually researched, not just recommended.</h1>
+        <p class="lead">SAMNJ breaks down what genuinely helps with cramps, hot flashes, and everything in between — plus straightforward picks when a product is worth it.</p>
+        <div class="cta-row">
+          <a class="btn btn-primary" href="#pillars">Start Reading</a>
+          <a class="btn btn-ghost" href="#newsletter">Get the Newsletter</a>
         </div>
-
-        <div class="newsletter-section">
-            <h3>📧 Get Weekly Wellness Tips</h3>
-            <p style="margin: 15px 0;">Join Women's Wellness Weekly for exclusive tips, product guides, expert reviews, and special finds.</p>
-            <a href="#subscribe" class="cta-button" style="background: white; color: #4a1f1f; margin-top: 15px;">Subscribe free to Women's Wellness Weekly</a>
-            <p style="font-size: 0.85em; margin-top: 15px; opacity: 0.9;">Receive: new product guides, expert tips, book reviews, special finds</p>
+      </div>
+      <div class="wheel-wrap" aria-label="Content categories">
+        <svg viewBox="0 0 200 200" role="img" aria-hidden="true">
+          <circle cx="100" cy="100" r="90" fill="none" stroke="var(--plum)" stroke-width="14" stroke-linecap="round" stroke-dasharray="127.37 438.12" transform="rotate(-135 100 100)"/>
+          <circle cx="100" cy="100" r="90" fill="none" stroke="var(--sage)" stroke-width="14" stroke-linecap="round" stroke-dasharray="127.37 438.12" transform="rotate(-45 100 100)"/>
+          <circle cx="100" cy="100" r="90" fill="none" stroke="var(--honey)" stroke-width="14" stroke-linecap="round" stroke-dasharray="127.37 438.12" transform="rotate(45 100 100)"/>
+          <circle cx="100" cy="100" r="90" fill="none" stroke="var(--blush)" stroke-width="14" stroke-linecap="round" stroke-dasharray="127.37 438.12" transform="rotate(135 100 100)"/>
+        </svg>
+        <div class="wheel-center">
+          <span class="eyebrow">Explore</span>
+          <strong>4 focus areas</strong>
         </div>
-
-        <section class="section">
-            <h2>🔍 About SAMNJ Newbrand</h2>
-            <p style="margin: 15px 0;">I'm a women's wellness researcher and product tester. This site exists because women deserve clear, honest, science-backed guidance—without the confusion or upselling.</p>
-            <p style="margin: 15px 0;">Every recommendation here is something I've tested, researched, or verified with expert sources. My goal is simple: help you feel better, understand your body, and have the products and knowledge you need to thrive.</p>
-        </section>
-
-        <section class="section">
-            <h2>💬 Frequently Asked Questions</h2>
-            
-            <div class="faq-item">
-                <div class="faq-q">Is this medical advice?</div>
-                <div class="faq-a">No. These are product recommendations and wellness guides, not medical advice. Always consult your healthcare provider before starting new supplements or if you have health concerns.</div>
-            </div>
-
-            <div class="faq-item">
-                <div class="faq-q">Why do you use affiliate links?</div>
-                <div class="faq-a">We earn a small commission from Amazon when you purchase through our links—at zero extra cost to you. This supports our research and helps us create more guides.</div>
-            </div>
-
-            <div class="faq-item">
-                <div class="faq-q">Can I trust these recommendations?</div>
-                <div class="faq-a">Every recommendation is tested and grounded in research. We only recommend products we'd use ourselves or recommend to friends.</div>
-            </div>
-        </section>
-
-        <section class="section" style="background: #f0ebe0; border-left-color: #4a1f1f;">
-            <h2>🌟 Welcome, Again</h2>
-            <p style="margin: 15px 0;">I'm so glad you're here. Whether you're dealing with period pain, planning fertility, navigating hormonal changes, or building overall wellness, you're in the right place.</p>
-            <p style="margin: 15px 0;">Start exploring, and don't hesitate to save guides for later. Your wellness journey matters.</p>
-            <p style="margin: 15px 0; font-weight: 600; color: #4a1f1f;">💚 SAMNJ Newbrand</p>
-        </section>
-
-        <footer>
-            <div class="footer-links">
-                <a href="https://mayur6464.github.io/Samnjglowlist/period-pain-relief-guide.html">Period pain relief</a>
-                <a href="https://mayur6464.github.io/Samnjglowlist/">Fertility & pregnancy</a>
-                <a href="https://mayur6464.github.io/Samnjglowlist/night-sweats-relief-guide.html">Menopause relief</a>
-                <a href="https://mayur6464.github.io/Samnjglowlist/storefront.html">General wellness</a>
-                <a href="#subscribe">Subscribe to the newsletter</a>
-            </div>
-            <div class="disclosure">
-                <strong>Disclosure:</strong> We earn a small commission from Amazon when you purchase through our links at no extra cost to you. All recommendations are genuine and tested.
-            </div>
-        </footer>
+        <a class="chip n" href="#pillars">Period Pain Relief</a>
+        <a class="chip e" href="#pillars">Menopause Relief</a>
+        <a class="chip s" href="#blog">Wellness Reads</a>
+        <a class="chip w" href="storefront.html">Product Guides</a>
+      </div>
     </div>
+  </section>
+
+  <section id="pillars">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>What we cover</h2>
+        <p>Four areas, one goal — helping you find relief without wading through noise.</p>
+      </div>
+      <div class="pillars">
+        <a class="pillar" href="period-pain-relief-guide.html">
+          <span class="dot" style="background:var(--plum);"></span>
+          <h3>Period Pain Relief</h3>
+          <p>Cramps, PMS, and the heating pads, supplements, and habits that actually take the edge off.</p>
+        </a>
+        <a class="pillar" href="night-sweats-relief-guide.html">
+          <span class="dot" style="background:var(--sage);"></span>
+          <h3>Menopause Relief</h3>
+          <p>Hot flashes, night sweats, and sleep — practical support for a stage that deserves better coverage.</p>
+        </a>
+        <a class="pillar" href="menopause-weight-gain-guide.html">
+          <span class="dot" style="background:var(--honey);"></span>
+          <h3>Wellness Reads</h3>
+          <p>Cycle-aware nutrition, movement, and mental health — grounded in evidence, not trends.</p>
+        </a>
+        <a class="pillar" href="storefront.html">
+          <span class="dot" style="background:var(--blush);"></span>
+          <h3>Product Guides</h3>
+          <p>Side-by-side comparisons and honest picks, including items we link to on Amazon.</p>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section id="blog">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>Latest from the blog</h2>
+        <p>Our most recent relief guides.</p>
+      </div>
+      <div class="posts">
+        <article class="post-card">
+          <span class="eyebrow">Period Pain Relief</span>
+          <h3>5 practical ways to help ease period pain</h3>
+          <p>Heat, anti-inflammatories, and natural remedies — plus a complete relief kit that actually helps.</p>
+          <a href="period-pain-relief-guide.html">Read the guide &rarr;</a>
+        </article>
+        <article class="post-card">
+          <span class="eyebrow">Menopause Relief</span>
+          <h3>5 practical ways to stop night sweats</h3>
+          <p>Cooling sheets, breathable bedding, and what actually helps you sleep through a hot flash.</p>
+          <a href="night-sweats-relief-guide.html">Read the guide &rarr;</a>
+        </article>
+        <article class="post-card">
+          <span class="eyebrow">Wellness Reads</span>
+          <h3>5 practical ways to manage menopause weight gain</h3>
+          <p>Why "meno belly" happens, and the protein, movement, and gut-health habits that help.</p>
+          <a href="menopause-weight-gain-guide.html">Read the guide &rarr;</a>
+        </article>
+        <article class="post-card">
+          <span class="eyebrow">Menopause Relief</span>
+          <h3>5 practical ways to manage mood swings</h3>
+          <p>Why menopause makes you snap over nothing, and the habits that help you feel steadier.</p>
+          <a href="menopause-mood-swings-guide.html">Read the guide &rarr;</a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="newsletter">
+    <div class="wrap">
+      <div class="newsletter">
+        <div>
+          <h2>One honest email, twice a month.</h2>
+          <p>New relief guides and product picks — no noise, unsubscribe anytime.</p>
+        </div>
+        <div>
+          <div class="ml-embedded" data-form="ArcQTE"></div>
+          <p class="nl-note">We respect your privacy. See our <a href="privacy-policy.html" style="color:#fff; text-decoration:underline;">Privacy Policy</a>.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="disclosure">
+    <div class="wrap">
+      <div class="disclosure">
+        <h2>Affiliate Disclosure (FTC)</h2>
+        <p>SAMNJ is a participant in the Amazon Services LLC Associates Program, an affiliate advertising program designed to provide a means for sites to earn advertising fees by advertising and linking to Amazon.com. <strong>As an Amazon Associate, we earn from qualifying purchases.</strong></p>
+        <p>This means that if you click a product link on this site and make a purchase on Amazon, we may receive a small commission — at no additional cost to you. We only recommend products we've researched and believe may genuinely help with period pain or menopause symptoms; our opinions remain our own.</p>
+        <p>Prices, availability, and product details are accurate as of the date each post was published and are subject to change on Amazon's site.</p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-grid">
+      <a class="logo" href="#top">SAMNJ<span>.</span></a>
+      <ul class="footer-links">
+        <li><a href="privacy-policy.html">Privacy Policy</a></li>
+        <li><a href="#disclosure">Affiliate Disclosure</a></li>
+        <li><a href="mailto:Samnje6464@gmail.com">Contact</a></li>
+      </ul>
+    </div>
+    <p class="fine">&copy; <span id="year"></span> SAMNJ. All content is for informational purposes only and is not a substitute for professional medical advice — always talk to a healthcare provider about persistent or severe symptoms. As an Amazon Associate, SAMNJ earns from qualifying purchases.</p>
+  </div>
+</footer>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+  const toggle = document.getElementById('navToggle');
+  const links = document.getElementById('navLinks');
+  toggle.addEventListener('click', () => {
+    const open = links.classList.toggle('open');
+    toggle.setAttribute('aria-expanded', open);
+  });
+</script>
+
+<script>
+  (function(w,d,e,u,f,l,n){w[f]=w[f]||function(){(w[f].q=w[f].q||[])
+  .push(arguments);},l=d.createElement(e),l.async=1,l.src=u,
+  n=d.getElementsByTagName(e)[0],n.parentNode.insertBefore(l,n);})
+  (window,document,'script','https://assets.mailerlite.com/js/universal.js','ml');
+  ml('account', '2507006');
+</script>
+
 </body>
 </html>
